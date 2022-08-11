@@ -139,6 +139,17 @@
 .weather {
     grid-column: 1 / span 2;
 }
+.weather-info {
+    position: relative;
+}
+.weather-icon {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+}
 .info h4 {
     letter-spacing: 2px;
     font-weight: 500;

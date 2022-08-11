@@ -13,6 +13,7 @@ const pressure = document.querySelector("#atm-pressure");
 const errorDisplay = document.querySelector("#error");
 const locationIcon = document.querySelector(".location-icon");
 const cityName = document.querySelector(".city-name");
+const weatherIcon = document.querySelector(".weather-icon");
 locationIcon.src = locIcon;
 
 
@@ -28,6 +29,7 @@ const handleData = (response, location) => {
   humidity.textContent = `${responseData.main.humidity}%`;
   pressure.textContent = `${responseData.main.pressure} hPa`;
   cityName.textContent = location;
+  weatherIcon.src = `http://openweathermap.org/img/wn/${responseData.weather[0].icon}@2x.png`
 
   // Hide the error bar if it exists
   if (errorDisplay.classList.contains("show-error")) {
@@ -52,6 +54,7 @@ axios.get('https://api.openweathermap.org/data/2.5/weather', {
   })
   .then(function (response) {
     handleData(response, location);
+    console.log(response.data)
   })
   .catch(function (error) {
     handleError(error);
