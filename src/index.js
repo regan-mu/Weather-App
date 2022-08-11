@@ -54,7 +54,6 @@ axios.get('https://api.openweathermap.org/data/2.5/weather', {
   })
   .then(function (response) {
     handleData(response, location);
-    console.log(response.data)
   })
   .catch(function (error) {
     handleError(error);
