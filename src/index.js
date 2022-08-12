@@ -10,6 +10,8 @@ const maxTemp = document.querySelector("#temp-max");
 const minTemp = document.querySelector("#temp-min");
 const humidity = document.querySelector("#hum");
 const pressure = document.querySelector("#atm-pressure");
+const wind = document.querySelector("#wind-sp");
+const visibility = document.querySelector("#visible");
 const errorDisplay = document.querySelector("#error");
 const locationIcon = document.querySelector(".location-icon");
 const cityName = document.querySelector(".city-name");
@@ -23,13 +25,15 @@ const handleData = (response, location) => {
   weather.textContent = responseData.weather[0].main;
   description.textContent = responseData.weather[0].description;
   temperature.textContent = `${responseData.main.temp} °C`;
-  tempFeel.textContent = `Feels like: ${responseData.main.feels_like} °C`;
-  maxTemp.textContent = `Maximum: ${responseData.main.temp_max} °C`;
-  minTemp.textContent = `Minimum: ${responseData.main.temp_min} °C`;
+  tempFeel.textContent = `${responseData.main.feels_like} °C`;
+  maxTemp.textContent = `${responseData.main.temp_max} °C`;
+  minTemp.textContent = `${responseData.main.temp_min} °C`;
   humidity.textContent = `${responseData.main.humidity}%`;
   pressure.textContent = `${responseData.main.pressure} hPa`;
+  wind.textContent = `${responseData.wind.speed} M/s`;
+  visibility.textContent = `${responseData.visibility / 1000} Km`
   cityName.textContent = location;
-  weatherIcon.src = `http://openweathermap.org/img/wn/${responseData.weather[0].icon}@2x.png`
+  weatherIcon.src = `https://openweathermap.org/img/wn/${responseData.weather[0].icon}@2x.png`
 
   // Hide the error bar if it exists
   if (errorDisplay.classList.contains("show-error")) {
