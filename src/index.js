@@ -34,7 +34,7 @@ const handleData = (response, location) => {
   tempFeel.textContent = `${responseData.main.feels_like} °C`;
   humidity.textContent = `${responseData.main.humidity}%`;
   pressure.textContent = `${responseData.main.pressure} hPa`;
-  direction.textContent = `${responseData.wind.deg} Degrees`;
+  direction.textContent = `${responseData.wind.deg} Deg`;
   wind.textContent = `${responseData.wind.speed} M/s`;
   visibility.textContent = `${responseData.visibility / 1000} Km`;
   cityName.textContent = `${location}, ${responseData.sys.country}`;
