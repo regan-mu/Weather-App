@@ -12,7 +12,6 @@
     height: auto;
     font-family: 'IBM Plex Sans', sans-serif;
     overflow: hidden;
-    padding: 16px;
 }
 .main .header {
     height: 4rem;
@@ -36,6 +35,7 @@
     width: 64px;
 }
 .weather-main {
+    padding: 16px;
     position: relative;
     background: url("../thunder.png");
     background-attachment: fixed;
