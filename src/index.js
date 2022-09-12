@@ -1,15 +1,16 @@
 const axios = require("axios").default
 import "./CSS/styles.css";
 import locIcon from "./map.png"
+import searchIco from "./search.png"
+import weatherIco from "./weather.png"
 
 const weather = document.querySelector("#weather-data");
 const description = document.querySelector("#description");
 const temperature = document.querySelector("#temp");
 const tempFeel = document.querySelector("#temp-feel");
-const maxTemp = document.querySelector("#temp-max");
-const minTemp = document.querySelector("#temp-min");
 const humidity = document.querySelector("#hum");
 const pressure = document.querySelector("#atm-pressure");
+const direction = document.querySelector("#wind-dir");
 const wind = document.querySelector("#wind-sp");
 const visibility = document.querySelector("#visible");
 const errorDisplay = document.querySelector("#error");
@@ -17,6 +18,11 @@ const locationIcon = document.querySelector(".location-icon");
 const cityName = document.querySelector(".city-name");
 const weatherIcon = document.querySelector(".weather-icon");
 locationIcon.src = locIcon;
+const searchBtn =document.querySelector(".search-icon");
+const mainIcon =document.querySelector(".main-icon");
+mainIcon.src=weatherIco;
+searchBtn.src=searchIco;
+
 
 
 
@@ -26,13 +32,12 @@ const handleData = (response, location) => {
   description.textContent = responseData.weather[0].description;
   temperature.textContent = `${responseData.main.temp} °C`;
   tempFeel.textContent = `${responseData.main.feels_like} °C`;
-  maxTemp.textContent = `${responseData.main.temp_max} °C`;
-  minTemp.textContent = `${responseData.main.temp_min} °C`;
   humidity.textContent = `${responseData.main.humidity}%`;
   pressure.textContent = `${responseData.main.pressure} hPa`;
+  direction.textContent = `${responseData.wind.deg} Degrees`;
   wind.textContent = `${responseData.wind.speed} M/s`;
-  visibility.textContent = `${responseData.visibility / 1000} Km`
-  cityName.textContent = location;
+  visibility.textContent = `${responseData.visibility / 1000} Km`;
+  cityName.textContent = `${location}, ${responseData.sys.country}`;
   weatherIcon.src = `https://openweathermap.org/img/wn/${responseData.weather[0].icon}@2x.png`
 
   // Hide the error bar if it exists

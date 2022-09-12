@@ -9,39 +9,39 @@
     position: relative;
     background-color: rgb(203, 203, 203);
     width: 100%;
-    height: 100vh;
+    height: auto;
     font-family: 'IBM Plex Sans', sans-serif;
     overflow: hidden;
 }
 .main .header {
-    height: 5rem;
+    height: 4rem;
     width: 100%;
-    background: #FFC54D;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0 48px;
 }
-.part-1, .part-3 {
-    font-size: 2rem;
-    color: #BD4291;
+.header h3 {
+    font-size: 2.5rem;
     font-weight: bold;
     letter-spacing: 1.4px;
+    color: #C3F8FF;
 }
-.part-2 {
-    font-size: 1.5;
-    font-weight: bold;
-    font-family: 'IBM Plex Sans', sans-serif;
+.header .logo {
+    display: flex;
+    gap: 8px;
+}
+.header .main-icon {
+    width: 64px;
 }
 .weather-main {
     position: relative;
-    background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,0.4) 43%, rgba(0,0,0,0.4) 100%),
-        url("../nature.jpg");
+    background: url("../thunder.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: calc(100vh - 5rem);
+    height: auto;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -50,8 +50,8 @@
 }
 #error {
     width: 100%;
-    height: 48px;
-    display: none;
+    height: 32;
+    
 }
 #error.show-error {
     background-color: rgba(0, 0, 0, 0.3);
@@ -64,83 +64,100 @@
 }
 .weather-display {
     width: 50%;
-    height: 90%;
+    height: calc(100vh - 5rem);
     display: grid;
-    grid-template: 1fr / 1fr 2fr;
-    column-gap: 32px;
-    align-content: center;
+    grid-template-rows: 120px 1fr;
     padding: 8px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(171, 217, 255, 0.6);
+    border-radius: 16px;
+    box-shadow: 5px 5px 5px rgb(52, 52, 52);
 }
 .form-section {
     position: relative;
     width: 100%;
-    height: 100%;
-    gap: 8px;
     padding: 8px 0;
 }
 .form-section .city-display {
     position: relative;
-    color:#BD4291;
-    font-size: 1.2rem;
+    color: #C3F8FF;
+    font-size: 2rem;
     font-weight: 600;
     width: 100%;
-    height: 32px;
     display: flex;
     align-items: center;
-    column-gap: 4px;
+    justify-content: center;
+    column-gap: 8px;
     text-transform: capitalize;
+    padding: 6px 0;
+    background-color: #0F3460;
+    border-radius: 8px;
 }
 .city-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     width: 100%;
-    height: 100%;
-    padding: 32px 0 0;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0 0;
+}
+.form-input {
+    width: 80%;
+    display: flex;
+    gap: 1px;
+    text-align: center;
+    border: 2px solid #0F3460;
+}
+#city::placeholder{
+    color: #0F3460;
+    font-size: 1rem;
 }
 #city {
-    width: 100%;
-    height: 32px;
-    border: 0.5px solid #F94c66;
+    width: 90%;
+    height: 40px;
     outline: none;
     padding: 3px;
+    margin: 0;
+    color: #0F3460;
+    font-size: 1.1rem;
 }
 #submit-btn {
-    width: 64px;
+    width: 48px;
     padding: 4px 12px;
     border-radius: none;
     border: none;
-    background-color: #F94c66;
-    margin: 3px 0 0;
+    height: 40px;
+    background-color: #ABD9FF;
     color: #FFF;
     letter-spacing: 1.3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#submit-btn .search-icon {
+    width: 24px;
+    height: 24px;
 }
 .info {
     position: relative;
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template: repeat(4, 1fr) / repeat(2, 1fr);
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    overflow: hidden;
     gap: 4px;
     padding: 8px 0 8px 8px;
+    color:rgb(207, 207, 207);
 }
 .info > div > div {
-    background-color: rgb(197, 197, 197);
     padding: 8px;
     border-radius: 4px;
-}
-.info  h3 {
-    letter-spacing: 1.5px;
-    color: #FFC54D;
-    font-weight: 500;
-    height: 24px;
 }
 .weather {
     grid-column: 1 / span 2;
 }
 .weather-info {
     position: relative;
+    width: 70%;
 }
 .weather-icon {
     position: absolute;
@@ -153,9 +170,12 @@
 .info h4 {
     letter-spacing: 2px;
     font-weight: 600;
+    font-size: 1.8rem;
+    color: #fff;
+}
+.info h3 {
+    font-weight: bolder;
     font-size: 1.5rem;
-    color: #F94c66;
-    margin: 0 0 12px;
 }
 #description {
     text-transform: capitalize;
@@ -163,27 +183,39 @@
 .info p {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    color: #BD4291;
 }
 .temperature {
-    grid-row: 2 / span 2;
-    grid-column: 2 / span 1;
+    grid-column: 1 / span 2;
 }
 .temperature .temperature-data {
     height: calc(100% - 32px);
+}
+.temperature-data #temp {
+    font-size: 3rem;
+}
+.other-temp {
     display: flex;
-    flex-direction: column;
-    justify-content:space-between;
+    align-items: center;
+    gap: 5px;
+    height: 32px;
 }
 .temperature h6 {
-    font-size: 0.8rem;
-    color: #005064;
+    font-size: 1.5rem;
 }
-.humidity .humidity-data {
-    height: calc(100% - 32px);
+.temperature p {
+    font-size: 1.2rem;
+    
 }
-.pressure .pressure-data {
-    height: calc(100% - 32px);
+.data {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+.pressure {
+    align-items: flex-start;
 }
 
 @media (max-width: 768px) {
