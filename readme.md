@@ -4,4 +4,4 @@ This app is built with JS, HTML, CSS, Open Weather Map Api and webpack for modul
 
 * View live [Demo](https://regan-mu.github.io/weather-app/)
 
-![Screenshot](./screenshot.png)
+![Screenshot](./ui.png)
