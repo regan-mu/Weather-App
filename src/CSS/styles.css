@@ -67,11 +67,13 @@
     width: 50%;
     height: calc(100vh - 5rem);
     display: grid;
-    grid-template-rows: 120px 1fr;
+    gap: 16px;
+    grid-template-rows: 150px 1fr;
     padding: 8px;
     background-color: rgba(171, 217, 255, 0.6);
     border-radius: 16px;
     box-shadow: 5px 5px 5px rgb(52, 52, 52);
+    margin: 16px 0;
 }
 .form-section {
     position: relative;
@@ -93,6 +95,11 @@
     background-color: #0F3460;
     border-radius: 8px;
 }
+.form-section .date {
+    color: #C3F8FF;
+    padding: 8px;
+    font-size: 1.1rem;
+}
 .city-form {
     width: 100%;
     height: auto;
@@ -107,6 +114,7 @@
     gap: 1px;
     text-align: center;
     border: 2px solid #0F3460;
+    border-radius: 8px;
 }
 #city::placeholder{
     color: #0F3460;
@@ -115,11 +123,14 @@
 #city {
     width: 90%;
     height: 40px;
-    outline: none;
+    border: 1px solid #fff;
+    outline-color: #fff;
     padding: 3px;
     margin: 0;
     color: #0F3460;
     font-size: 1.1rem;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 #submit-btn {
     width: 48px;
@@ -133,6 +144,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 #submit-btn .search-icon {
     width: 24px;
@@ -171,12 +184,13 @@
 .info h4 {
     letter-spacing: 2px;
     font-weight: 600;
-    font-size: 1.8rem;
-    color: #fff;
+    font-size: 1.5rem;
+    color: #C3F8FF;
 }
+
 .info h3 {
     font-weight: bolder;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 #description {
     text-transform: capitalize;
@@ -192,7 +206,7 @@
     height: calc(100% - 32px);
 }
 .temperature-data #temp {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 .other-temp {
     display: flex;
