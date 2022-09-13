@@ -24,7 +24,7 @@ mainIcon.src=weatherIco;
 searchBtn.src=searchIco;
 const dateToday = document.querySelector(".date");
 const date = new Date();
-const dateOnly = `${date.getDay()}, ${date.toLocaleString('default', { month: 'short' })} ${date.getFullYear()}`;
+const dateOnly = `${date.getDate()}, ${date.toLocaleString('default', { month: 'short' })} ${date.getFullYear()}`;
 dateToday.textContent = dateOnly;
 
 
