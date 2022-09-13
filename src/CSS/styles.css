@@ -180,7 +180,22 @@
     top: 50%;
     transform: translateY(-50%);
     right: 16px;
+    animation-duration: 2s;
+    animation-name: anim;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
+
+@keyframes anim {
+    from {
+        scale: 0.8;
+    }
+    to {
+        scale: 1;
+    }
+    
+}
+
 .info h4 {
     letter-spacing: 2px;
     font-weight: 600;
